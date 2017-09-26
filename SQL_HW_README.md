@@ -3,12 +3,12 @@ SQL Homework Assignment
 
 1a. You need a list of all the actors’ first name and last name 
 
-select a.first_name, a.last_name
+SELECT a.first_name, a.last_name
 FROM actor a;
 
 1b. Display the first and last name of each actor in a single column in upper case letters. Name the column Actor Name  --CONCAT
 
-select concat(first_name, ' ', last_name) AS ACTOR_NAME
+SELECT CONCAT(first_name, ' ', last_name) AS ACTOR_NAME
 from actor;
 
 
