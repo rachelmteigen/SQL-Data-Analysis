@@ -241,6 +241,7 @@ ON a.address_id = s.address_id;
 
 
 7h. List the top five genres in gross revenue in descending order. 
+
 SELECT  c.name, SUM(p.amount) AS total
 FROM rental r
 LEFT JOIN inventory i
@@ -255,6 +256,7 @@ GROUP BY c.name
 ORDER BY c.name DESC;
 
 8a. In your new role as an executive, you would like to have an easy way of viewing the Top five genres by gross revenue. Use the solution from the problem above to create a view. 
+
 CREATE VIEW as top_five_genres
 SELECT  c.name, SUM(p.amount) AS total
 FROM rental r
@@ -271,10 +273,12 @@ ORDER BY c.name DESC
 LIMIT 5;
 
 8b. How would you display the view that you created in 8a?
+
 SELECT * from top_five_genres
 limit 10;
 
 8c. You find that you no longer need the view top_five_genres. Write a query to delete it.
+
 DROP VIEW top_five_genres;
 
 
