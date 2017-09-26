@@ -1,8 +1,6 @@
 # SQL_Homework
 SQL Homework Assignment
 
-Pavan is happy to do a 1 on 1 with you to go over anything in particular. Please message him on slack
-
 1a. You need a list of all the actors’ first name and last name 
 
 select a.first_name, a.last_name
