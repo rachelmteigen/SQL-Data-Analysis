@@ -162,6 +162,7 @@ FROM S1;
 
 
 6e. Using the tables payment and customer and the JOIN command, list the total paid by each customer. List the customers alphabetically by last name:
+
 SELECT c.last_name, SUM(p.amount)
 FROM payment p
 LEFT JOIN customer c
@@ -172,13 +173,16 @@ ORDER BY last_name ASC;
 
 
 7a. The music of Queen and Kris Kristofferson have seen an unlikely resurgence. As an unintended consequence, films starting with the letters K and Q have also soared in popularity. display the titles of movies starting with the letters K and Q whose language is English.
+
 SELECT f.title, l.language_id, l.name
 FROM film f
 LEFT JOIN language l
 ON f.language_id = l.language_id  
 WHERE title iLIKE 'Q%' OR  title iLIKE 'K%' OR name iLIKE 'English%'
 GROUP BY f.title, l.name, l.language_id;
+
 7b. Use subqueries to display all actors who appear in the film Alone Trip.
+
 SELECT f.title, fa.actor_id, a.last_name
 FROM film f
 LEFT JOIN film_actor fa
@@ -186,7 +190,9 @@ ON f.film_id = fa.film_id
 LEFT JOIN actor a
 ON fa.actor_id = a.actor_id
 WHERE title = 'ALONE TRIP';
+
 7c. You want to run an email marketing campaign in Canada, for which you will need the names and email addresses of all Canadian customers. Use joins to retrieve this information.
+
 SELECT co.country, a.address, cu.email, cu.last_name, cu.first_name
 FROM city c
 RIGHT JOIN address a
@@ -199,6 +205,7 @@ WHERE country = 'Canada';
 
 
 7d. Sales have been lagging among young families, and you wish to target all family movies for a promotion. Identify all movies categorized as a family film.
+
 SELECT f.title, cat.name
 FROM category cat
 LEFT JOIN film_category fc
@@ -209,6 +216,7 @@ WHERE name = 'Family' OR name = 'Children';
 
 Now we mentioned family film, but there is no family film category. There’s a category that resembles that. In the real world nothing will be exact.
 7e. Display the most frequently rented movies in descending order.
+
 SELECT f.title, COUNT(p.rental_id) as total
 FROM rental r
 LEFT JOIN inventory i
@@ -222,6 +230,7 @@ ORDER BY total DESC;
 
 
 7f. Write a query to display how much business, in dollars, each store brought in.
+
 SELECT s.store_id, SUM(p.amount) AS total
 FROM payment p
 LEFT JOIN staff s
@@ -230,6 +239,7 @@ GROUP BY s.store_id
 ORDER BY total;
 
 7g. Write a query to display for each store its store ID, city, and country.
+
 SELECT  s.store_id, a.address, c.city, co.country
 FROM city c
 RIGHT JOIN address a
