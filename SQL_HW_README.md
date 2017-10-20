@@ -1,5 +1,4 @@
-# SQL_Homework
-SQL Homework Assignment
+# SQL
 
 1a. You need a list of all the actors’ first name and last name 
 
